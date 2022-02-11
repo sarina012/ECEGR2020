@@ -1,1 +1,0 @@
-main	C:\Users\sarin\Documents\ECEGR2020\PracticeLabs\main.c	/^int main(int argc, char **argv)$/;"	function	line:3	signature:(int argc, char **argv)	returns:int 
