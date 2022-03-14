@@ -1,0 +1,13 @@
+3
+4
+Dragonfruit
+D
+4.000000
+3
+Cherry
+C
+3.000000
+2
+Bananananananana
+B
+2.500000
