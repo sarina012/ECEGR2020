@@ -25,19 +25,15 @@ class Student
         void setID(int ID){
             this->ID = ID;
         }
-
         int getID(){
             return ID;
         }
-
         void setGPA(float GPA){
             this->GPA = GPA;
         }
-
         float getGPA(){
             return GPA;
         }
-
         void setFirstName(std::string firstName){
             this->firstName = firstName;
         }
@@ -147,9 +143,9 @@ void Menu(){
     while(option != 5){
         printf(" ----------Menu---------- \n");
         printf(" 1) List all Students\n");
-        printf(" 2) Add Student\n");              //Student is inserted into the linked list in descending order of GPA. This avoids a full sort of the linked list entirely.
-        printf(" 3) Remove Student w/ ID\n");   //Assuming that we remove student by their unique ID, a reasonable and realistic assumption.
-        printf(" 4) Update Student w/ ID\n");   //Again, by using a sensible approach of ID.
+        printf(" 2) Add Student\n");             
+        printf(" 3) Remove Student w/ ID\n"); 
+        printf(" 4) Update Student w/ ID\n");   
         printf(" 5) Save and Quit\n\n\n");
         scanf("%d", &option);
         int ID;
