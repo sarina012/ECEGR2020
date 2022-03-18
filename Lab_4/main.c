@@ -316,4 +316,3 @@ After each new student is added, their gpa will be put into the ReorderStudentsB
 students will then be reorganized with respect to who has the highest GPA. This step eliminates the 
 need to constantly reorganize the students by their GPAs. 
 */
-
