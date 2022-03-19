@@ -67,8 +67,7 @@ Person :: Person()
     this->next = NULL;
 }
 
-Person :: Person(int id_in, string first_name, string last_name)
-{
+Person :: Person(int id_in, string first_name, string last_name){
     this->ID = id_in;
     this->firstName = first_name;
     this->lastName = last_name;
@@ -296,11 +295,9 @@ void readFileInformation(){
         readInformationFromFile >> temp;
         readInformationFromFile >> allCollegePeople;
         cout << "\nNumber of People: " << allCollegePeople << "\n";
-        for(int i = 0; i < allCollegePeople; i++)
-        {
+        for(int i = 0; i < allCollegePeople; i++){
             readInformationFromFile >> temp;
-            if(temp == "Student")
-            {
+            if(temp == "Student"){
                 int read_id = 0;
                 string read_first = "";
                 string read_last= "";
@@ -340,48 +337,38 @@ void readFileInformation(){
                 readInformationFromFile >> read_ten;
                 readInformationFromFile >> temp;
                 readInformationFromFile >> temp;
-                if(temp == "English")
-                {
+                if(temp == "English"){
                     read_dep = English;
                 }
-                else if(temp == "Business")
-                {
+                else if(temp == "Business"){
                     read_dep = Business;
                 }
-                else if(temp == "Philsophy")
-                {
+                else if(temp == "Finance"){
                     read_dep = Finance;
                 }
-                else if(temp == "Journalism")
-                {
+                else if(temp == "Journalism"){
                     read_dep = Journalism;
                 }
-                else if(temp == "Biology")
-                {
+                else if(temp == "Biology"){
                     read_dep = Biology;
                 }
-                else if(temp == "Physics")
-                {
+                else if(temp == "Physics"){
                     read_dep = Physics;
                 }
-                else if(temp == "Math")
-                {
+                else if(temp == "Math"){
                     read_dep = Math;
                 }
-                else if(temp == "Engineering")
-                {
+                else if(temp == "Engineering"){
                     read_dep = Engineering;
                 }
-                else
-                {
+                else{
                     read_dep = Undeclared;
                 }
                 
                 Person* newProfesor = new Professor(read_id, read_first, read_last, read_salary, read_ten, read_dep);
                 insertNode(newProfesor);
             }
-            else if(temp == "Employee")
-            {
+            else if(temp == "Employee"){
                 int read_id = 0;
                 string read_first = "";
                 string read_last= "";
@@ -400,9 +387,7 @@ void readFileInformation(){
                 Person* newEmployee = new Employee(read_id, read_first, read_last, read_salary);
                 insertNode(newEmployee);
             }
-            else
-            {
-                
+            else{
             }
         }
         readInformationFromFile.close();
@@ -410,27 +395,19 @@ void readFileInformation(){
     }
 }
 
-void readLinkedList()
-{
+void readLinkedList(){
     Person* node = head;
     printf("\n-------------Saved Information-------------");
-    while(node != NULL) // While loop to iterate through the linked list.
-    {
-        //
-        // Print the attributes of each student in the linked list.
-        //
-        if(instanceof<Student>(node))
-        {
+    while(node != NULL){
+        if(instanceof<Student>(node)){
             Student* tempStudent = (Student*) node;
             cout << "\n\nStudent";
             cout << "\nID: " << tempStudent->getID();
             cout << "\nFirst Name: " << tempStudent->getFirstName();
             cout << "\nLast Name: " << tempStudent->getLastName();
             cout << "\nGPA: " << tempStudent->getGPA();
-            //delete tempStudent;
         }
-        else if(instanceof<Professor>(node))
-        {
+        else if(instanceof<Professor>(node)){
             Professor* tempProfessor = (Professor*) node;
             cout << "\n\nProfessor";
             cout << "\nID: " << tempProfessor->getID();
@@ -443,7 +420,7 @@ void readLinkedList()
             else{
                 cout << "\nTenured: No";
             }
-             tempProfessor->getTenured();
+            tempProfessor->getTenured();
             if(tempProfessor->getDepartment() == English){
                 cout << "\nDepartment: English";
             }
@@ -498,7 +475,7 @@ void saveLinkedList() {
         cout << "Unable to write file\n";
     }
     else{
-        openRecords << "Number of people: " << personCount;
+        openRecords << "Number of people at college: " << personCount;
         node = head;
         while(node != NULL){
             if(instanceof<Student>(node)){
@@ -521,41 +498,32 @@ void saveLinkedList() {
                 if(tempProfessor->getDepartment() == English){
                     openRecords << "\nDepartment: English";
                 }
-                else if(tempProfessor->getDepartment() == Business)
-                {
+                else if(tempProfessor->getDepartment() == Business){
                     openRecords << "\nDepartment: Business";
                 }
-                else if(tempProfessor->getDepartment() == Finance)
-                {
+                else if(tempProfessor->getDepartment() == Finance){
                     openRecords << "\nDepartment: Finance";
                 }
-                else if(tempProfessor->getDepartment() == Journalism)
-                {
+                else if(tempProfessor->getDepartment() == Journalism){
                     openRecords << "\nDepartment: Journalism";
                 }
-                else if(tempProfessor->getDepartment() == Biology)
-                {
+                else if(tempProfessor->getDepartment() == Biology){
                     openRecords << "\nDepartment: Biology";
                 }
-                else if(tempProfessor->getDepartment() == Physics)
-                {
+                else if(tempProfessor->getDepartment() == Physics){
                     openRecords << "\nDepartment: Physics";
                 }
-                else if(tempProfessor->getDepartment() == Math)
-                {
+                else if(tempProfessor->getDepartment() == Math){
                     openRecords << "\nDepartment: Math";
                 }
-                else if(tempProfessor->getDepartment() == Engineering)
-                {
+                else if(tempProfessor->getDepartment() == Engineering){
                     openRecords << "\nDepartment: Engineering";
                 }
-                else
-                {
+                else{
                     openRecords << "\nDepartment: Undeclared";
                 }
             }
-            else if(instanceof<Employee>(node))
-            {
+            else if(instanceof<Employee>(node)){
                 Employee* tempEmployee = (Employee*) node;
                 openRecords << "\nEmployee" <<endl;
                 openRecords << "ID: " << tempEmployee->getID() <<endl;
@@ -586,12 +554,9 @@ void insertNode(Person* person_in){
             return;
         }
     }
-    
     Person* node = head;
-    
     while(node->getNext() != NULL){
         Person* nextNode = node->getNext();
-        
         if((node->getID() > person_in->getID()) && (person_in->getID() >= nextNode->getID())){
             person_in->setNext(node->getNext());
             node->setNext(person_in);
@@ -618,12 +583,10 @@ void deleteNode(Person* person_in){
         delete person_in;
         return;
     }
-    
     while(currentPerson != NULL && currentPerson != person_in) {
         prevPerson = currentPerson;
         currentPerson = currentPerson->getNext(); 
     }
-    
     if(currentPerson != NULL){
         prevPerson->setNext(currentPerson->getNext());
     }
@@ -658,7 +621,6 @@ void addToLinkedList(){
                     }
                     identityCheck = identityCheck->getNext(); 
                 }
-                
                 printf("\nFirst name of the student: "); 
                 cin >> first_nameput;
                 printf("\nLast name of the student: "); 
@@ -771,8 +733,7 @@ void addToLinkedList(){
     }while(user_input != 4);
 }
 
-void removeIdFromLinkedList(int id_in)
-{
+void removeIdFromLinkedList(int id_in){
     Person* node = head;
     while(node != NULL){
         if(id_in == node->getID()){
@@ -1021,7 +982,6 @@ void updateIdInLinkedList(int id_in){
                 do{
                     updateEmployeeMenu(node->getFirstName(), node->getLastName()); 
                     cin >> user_input; 
-
                     int new_identity, old_identity = 0;
                     string new_firstName = "";
                     string old_firstName = "";
@@ -1101,7 +1061,6 @@ void menu(){
 
 void addAndDiplayMenu() {
     printf("\n----------Select an Option----------");
-    
     printf("\n [1] Student");
     printf("\n [2] Professor");
     printf("\n [3] Employee");
@@ -1116,8 +1075,7 @@ void updateStudentMenu(string first, string last){
     printf("\n [2] First Name");
     printf("\n [3] Last Name");
     printf("\n [4] GPA");
-    
-    printf("\n [5] Quit");
+    printf("\n [5] Save and Quit");
     printf("\n-------------------------------------\n");
 }
 
