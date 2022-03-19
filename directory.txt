@@ -1,0 +1,20 @@
+Number of people: 3
+Employee
+ID: 4
+First Name: Cantelope
+Last Name: C
+Salary: 987642
+
+Professor
+ID: 3
+First Name: Banana
+Last Name: B
+Salary: 123321
+Tenured: 1
+
+Department: Biology
+Student
+ID: 1
+First Name: Apple
+Last Name: A
+GPA: 3.4
